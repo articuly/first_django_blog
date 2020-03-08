@@ -9,6 +9,7 @@ class BlogArticles(models.Model):
     body=models.TextField()
     publish=models.DateTimeField(default=timezone.now)
 
+    # 内部类
     class Meta:
         ordering=('-publish',)
 
