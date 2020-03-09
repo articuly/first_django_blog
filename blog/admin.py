@@ -11,5 +11,5 @@ class BlogArticlesAdmin(admin.ModelAdmin):
     ordering = ['-publish', 'author']
 
 
-# Register your models here.
+# 注册数据库模型和数据的管理模型
 admin.site.register(BlogArticles, BlogArticlesAdmin)
