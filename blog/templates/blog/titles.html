@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block content %}
+    <div>
+        <ul>
+            {% for blog in blogs %}
+                <li><a href="{{ blog.id }}">{{ blog.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block slide %}
+    {% load static %}
+    <img src="{% static './images/articuly.png' %}" width=150>
+{% endblock %}

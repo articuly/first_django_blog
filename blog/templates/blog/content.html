@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="row text-center">
+        <h1>{{ article.title }}</h1>
+        <p class="text-center">
+            <span>作者：{{ article.author.username }}</span>
+            <span style="margin-left: 10px">发布时间：{{ publish }}</span>
+        </p>
+        <div>{{ article.body }}</div>
+    </div>
+{% endblock %}
+
+{% block slide %}
+    {% load static %}
+    <img src="{% static './images/articuly.png' %}" width=150>
+{% endblock %}
