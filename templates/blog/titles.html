@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    My Blog
+    文章列表
 {% endblock %}
 
 {% block content %}
@@ -12,9 +12,4 @@
             {% endfor %}
         </ul>
     </div>
-{% endblock %}
-
-{% block slide %}
-    {% load static %}
-    <img src="{% static './images/articuly.png' %}" width=150>
 {% endblock %}

@@ -1,35 +1,51 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
     <title>{% block title %}{% endblock %}</title>
+    <style type="text/css">
+        footer {
+            padding: 15px;
+            background: #8c8989;
+            text-align: center;
+        }
+
+        footer nav {
+            margin: auto;
+            width: 300px;
+        }
+
+        .row {
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        {% block style %}
+
+        {% endblock %}
+    </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row center-block">
-        <h1 class="text-center">清心涟漪的博客</h1>
-        <p class="text-center">请关注我的微信公众号</p>
-        {% load static %}
-        <img src="{% static './images/rainbow.jpg' %}" width=400 height=120 class="center-block">
-    </div>
-    <div class="row">
-        <div class="col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-            <div class="row">
-                <div class="col-sm-9">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-                <div class="col-sm-3">
-                    {% block slide %}
-                    {% endblock %}
-                </div>
+{% include 'header.html' %}
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="main col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
     </div>
-</div>
+</main>
+{% include 'footer.html' %}
+{% block javascript %}
+    <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+{% endblock %}
 </body>
 </html>

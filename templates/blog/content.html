@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{ article.title }}
+    {{ article.title }} - 清心涟漪
 {% endblock %}
 
 {% block content %}
@@ -13,9 +13,4 @@
         </p>
         <div>{{ article.body }}</div>
     </div>
-{% endblock %}
-
-{% block slide %}
-    {% load static %}
-    <img src="{% static './images/articuly.png' %}" width=150>
 {% endblock %}

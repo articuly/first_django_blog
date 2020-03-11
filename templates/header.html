@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load staticfiles %}
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid" style="background-color: #C1F48C;">
+        <div class="navbar-header">
+            <img src="{% static 'images/articuly.jpg' %}" width=64 height=64>
 
-</body>
-</html>
+        </div>
+        <div>
+            <ul class="'nav navbar-nav">
+                <li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登陆</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
