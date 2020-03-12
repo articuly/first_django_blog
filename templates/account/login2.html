@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    登陆
+{% endblock %}
+
+{% block content %}
+    <div class="row text-center">
+        <h1>登录</h1>
+        <p>输入用户名和密码</p>
+        <form class="form-horizontal" action="{% url 'account:user_login' %}" method="post">
+            {% csrf_token %}
+            <div class="form-control">
+                <label class="col-xs-5 control-label">用户名：</label>
+                <div class="col-xs-6 text-left">{{ form.username }}</div>
+            </div>
+            <div class="form-control">
+                <label class="col-xs-5 control-label">密　码：</label>
+                <div class="col-xs-6 text-left">{{ form.password }}</div>
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg" value="登录">
+        </form>
+    </div>
+{% endblock %}

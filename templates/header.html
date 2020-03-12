@@ -10,7 +10,12 @@
                 <li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">登陆</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="#">{{ user.username }}</a></li>
+                    <li><a href="{% url 'account:user_logout' %}">退出</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:user_login' %}">登陆</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

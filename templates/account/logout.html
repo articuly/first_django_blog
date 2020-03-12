@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    退出
+{% endblock %}
+
+{% block content %}
+    <p>你已经愉快地退出了。</p>
+    <p>如果还想回去，点击这里吗：<a href="{% url 'account:user_login' %}">登录</a></p>
+{% endblock %}
