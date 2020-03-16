@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    用户注册
+{% endblock %}
+
+{% block content %}
+    <div class="row text-center">
+        <h1>用户注册</h1>
+        <form class="form-horizontal" action="." method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="col-xs-5 control-label">用户名</label>
+                <div class="col-xs-6 text-left">{{ form.username }}</div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-5 control-label">邮箱</label>
+                <div class="col-xs-6 text-left">{{ form.email }}</div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-5 control-label">手机号</label>
+                <div class="col-xs-6 text-left">{{ profile.phone }}</div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-5 control-label">密码</label>
+                <div class="col-xs-6 text-left">{{ form.password }}</div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-5 control-label">确诊密码</label>
+                <div class="col-xs-6 text-left">{{ form.password2 }}</div>
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg" value="立即注册">
+        </form>
+    </div>
+{% endblock %}
