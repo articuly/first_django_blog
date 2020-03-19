@@ -8,3 +8,13 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return 'user {0}'.format(self.user.username)
+
+
+class UserInfo(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    company = models.CharField(max_length=100, blank=True)
+    profession = models.CharField(max_length=100, blank=True)
+    aboutme = models.TextField(blank=True)
+
+    def __str__(self):
+        return 'user:{}'.format(self.user.username)

@@ -117,7 +117,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
+# 登陆后跳转的网址
 LOGIN_REDIRECT_URL = '/blog/'
-
+# 登陆的网址
 LOGIN_URL = '/account/login/'
+# 调试邮件功能时，将其发送到控制台
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
